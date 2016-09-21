@@ -12,7 +12,7 @@
  - React.JS
  - Firebase
  - ~possibly API???~
- - googleMaps??
+
 
 ##Next Steps
 
@@ -28,3 +28,4 @@
  - Search by cuisine
  - Add pictures of restaurant/food
  - Figure out Facebook || Gmail || twitter login
+ - googleMaps??
