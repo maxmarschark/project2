@@ -2,28 +2,29 @@
 
 ##Project MVP
 
-  restaurant Reviewer
+  restaurant Reviewer(blog)
 
 ##Technologies
 
-  HTML5
-  CSS3
-  Javascript
-  React.JS
-  Firebase
-  ~possibly API???~
+ - HTML5
+ - CSS3
+ - Javascript
+ - React.JS
+ - Firebase
+ - ~possibly API???~
+ - googleMaps??
 
 ##Next Steps
 
-Figure out signup/login
-Add restaurant info
-Add post(review) bar
-Add buttons(add restaurant, review, delete)
+ - Figure out signup/login
+ - Add restaurant info
+ - Add post(review) bar
+ - Add buttons(add restaurant, review, delete)
 
 
 
 ##Bonuses
 
-Search by cuisine
-Add pictures of restaurant/food
-Figure out Facebook || Gmail || twitter login
+ - Search by cuisine
+ - Add pictures of restaurant/food
+ - Figure out Facebook || Gmail || twitter login
