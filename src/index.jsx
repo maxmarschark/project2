@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Routes from './config/routes.jsx';
 
-console.log('index ready');
+ReactDOM.render(<Routes />, document.getElementById('main'));

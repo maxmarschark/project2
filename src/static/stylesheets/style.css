@@ -1,3 +1,71 @@
 body {
-  background-color: lightblue;
+  font-family: "proxima-nova-soft",sans-serif;
+  text-align: center;
+  background-color: rgba(177, 43, 43, 0.73);
+  -webkit-text-stroke: .5px black;
+}
+
+#main-nav {
+  background-color: rgb(179, 14, 14);
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#main-content {
+  position: absolute;
+  padding-top: 6rem;
+  text-align: center;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#login {
+  position: absolute;
+  top: 1rem;
+  right: 5.7rem;
+}
+
+#register {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  text-align: center;
+}
+
+#sign-out {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+input {
+  font-style: italic;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 40%;
+  display: inline-block;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10%;
+}
+
+.btn {
+  color: white;
+  background-color: rgb(179, 14, 14);
+  height: 2rem;
+  width: 9rem;
+  box-sizing: padding-box;
+  border-radius: 20%;
 }
