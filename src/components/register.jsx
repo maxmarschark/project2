@@ -41,8 +41,8 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <h1>Register</h1>
-        <form id="register-form">
+        <h1 id="registerStyle">Register</h1>
+        <div id="register-form">
           <div>
             <input name="username" onChange={this.handleChange} type="text" placeholder="username" />
           </div>
@@ -50,7 +50,7 @@ class Register extends Component {
             <input name="password" onChange={this.handleChange} type="password" placeholder="password" />
           </div>
           <button className="btn" onClick={this.handleSubmit}>Register</button>
-        </form>
+        </div>
       </div>
     );
   }

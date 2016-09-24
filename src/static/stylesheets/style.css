@@ -34,11 +34,23 @@ a {
   -webkit-text-stroke: .5px black;
 }
 
+#loggingIn {
+  font-family: 'Modak', cursive;
+  color: white;
+  -webkit-text-stroke: .5px black;
+}
+
 #login {
   position: absolute;
   top: 1rem;
   right: 5.7rem;
   font-size: 16px;
+  -webkit-text-stroke: .5px black;
+}
+
+#registerStyle {
+  font-family: 'Modak', cursive;
+  color: white;
   -webkit-text-stroke: .5px black;
 }
 
