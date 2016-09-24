@@ -40,7 +40,7 @@ class Login extends Component {
     return (
       <div>
       <h1>Login</h1>
-        <div id="login-form">
+        <form id="login-form">
           <div>
             <input name="username" onChange={this.handleChange} type="text" placeholder="username" />
           </div>
@@ -48,7 +48,7 @@ class Login extends Component {
             <input name="password" onChange={this.handleChange} type="password" placeholder="password" />
           </div>
           <button className="btn" onClick={this.handleSubmit}>Login</button>
-        </div>
+        </form>
       </div>
     );
   }

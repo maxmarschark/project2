@@ -31,6 +31,7 @@ class Register extends Component {
         firebase.database().ref('users')
           .child(user.uid)
           .set({first_name: '', last_name: '', email: username})
+          console.log(firebase.auth().currentUser);
       })
       .then(() => {
         this.props.router.push('/dashboard');
@@ -41,7 +42,7 @@ class Register extends Component {
     return (
       <div>
         <h1>Register</h1>
-        <div id="register-form">
+        <form id="register-form">
           <div>
             <input name="username" onChange={this.handleChange} type="text" placeholder="username" />
           </div>
@@ -49,7 +50,7 @@ class Register extends Component {
             <input name="password" onChange={this.handleChange} type="password" placeholder="password" />
           </div>
           <button className="btn" onClick={this.handleSubmit}>Register</button>
-        </div>
+        </form>
       </div>
     );
   }
