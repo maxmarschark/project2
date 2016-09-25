@@ -1,5 +1,7 @@
 import React from 'react';
+import request from 'superagent';
 import like from './like.jsx';
+import firebase from '../../firebase.config.js';
 
 const propTypes = {
   content: React.PropTypes.string,
@@ -11,62 +13,71 @@ const propTypes = {
 };
 
 class Review extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      localAuthor: this.props.author || '',
-      localContent: this.props.content || '',
+      localRestName: '',
+      localReview: '',
     };
     this.handleEditOfAuthor = this.handleEditOfAuthor.bind(this);
     this.handleEditOfContent = this.handleEditOfContent.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
-    this.handleLikeClick = this.handleLikeClick.bind(this);
+    // this.handleLikeClick = this.handleLikeClick.bind(this);
     this.isSaved = this.isSaved.bind(this);
+    this.publishReview = this.publishReview.bind(this);
   }
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     this.setState({
-      localAuthor: nextProps.author || '',
-      localContent: nextProps.content || '',
+      localRestName: '',
+      localReview: '',
     });
   }
   handleEditOfAuthor(e) {
     const newAuthor = e.target.value;
     this.setState({
-      localAuthor: newAuthor,
+      localRestName: newAuthor,
     });
   }
   handleEditOfContent(e) {
     const newContent = e.target.value;
     this.setState({
-      localContent: newContent,
+      localReview: newContent,
     });
   }
   handleSubmit(e) {
     e.preventDefault();
     this.props.handlePublish({
       id: this.props.id,
-      author: this.state.localAuthor,
-      content: this.state.localContent,
+      author: this.state.localRestName,
+      content: this.state.localReview,
     });
     this.setState({ saved: true });
   }
   handleDeleteClick() {
     this.props.handleDelete(this.props.id);
   }
-  handleLikeClick() {
-    let localLikeCount = this.props.likeCount;
-    localLikeCount += 1;
-    this.props.handlePublish({
-      likeCount: localLikeCount,
-      id: this.props.id,
-      author: this.state.localAuthor,
-      content: this.state.localContent,
+  // handleLikeClick() {
+  //   let localLikeCount = this.props.likeCount;
+  //   localLikeCount += 1;
+  //   this.props.handlePublish({
+  //     likeCount: localLikeCount,
+  //     id: this.props.id,
+  //     author: this.state.localRestName,
+  //     content: this.state.localReview,
+  //   });
+  // }
+  publishReview() {
+    console.log('review is being published');
+    const userId = firebase.auth().currentUser.uid;
+    const url = 'https://restaurantreview-ae4cc.firebaseio.com/reviews.json';
+    request.post(url).send({ user: userId, restName: this.state.localRestName, review: this.state.localReview }).catch((err) => {
+      console.log(err);
     });
   }
   isSaved() {
-    return this.props.author === this.state.localAuthor &&
-          this.props.content === this.state.localContent;
+    return this.props.author === this.state.localRestName &&
+          this.props.content === this.state.localReview;
   }
   render() {
     let activeButtons;
@@ -83,25 +94,26 @@ class Review extends React.Component {
     }
     return (
       <div className={this.isSaved() ? 'saved' : 'not-saved'} >
-        <form className="reviews" onSubmit={this.handleSubmit}>
+        <div className="reviews" onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="author"
-            value={this.state.localAuthor}
+            placeholder="Your Restaraunt"
             onChange={this.handleEditOfAuthor}
           />
           <input
             type="text"
             name="content"
-            value={this.state.localContent}
+            placeholder="Your Review"
             onChange={this.handleEditOfContent}
           />
           <input
             type="submit"
-            value="SAVE"
+            value="Publish Review"
             className="hidden"
+            onClick={this.publishReview}
           />
-        </form>
+        </div>
         {activeButtons}
       </div>
     );

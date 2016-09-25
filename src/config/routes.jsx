@@ -18,7 +18,7 @@ const Routes = () => {
         <Route path="register" component={Register} />
         <Route path="dashboard" component={Dashboard} onEnter={requireAuth} />
         <Route path="review" component={Review} />
-        <Route path ="like" compenent={Like} />
+        <Route path="like" compenent={Like} />
       </Route>
     </Router>
   );

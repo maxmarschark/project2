@@ -63,6 +63,11 @@ a {
   -webkit-text-stroke: .5px black;
 }
 
+#LeaveReview {
+  
+  -webkit-text-stroke: .5px black;
+}
+
 #sign-out {
   position: absolute;
   top: 1rem;

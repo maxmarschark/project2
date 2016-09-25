@@ -6,8 +6,7 @@ import {Link} from 'react-router';
 const Dashboard = () => {
   return (
     <div>
-        <h1>Restaurant Review</h1>
-        <Link to="/review">Leave A Review</Link>
+        <Link to="/review" id="LeaveReview">Leave A Review</Link>
     </div>
   );
 }
