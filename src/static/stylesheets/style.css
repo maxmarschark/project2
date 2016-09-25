@@ -68,6 +68,7 @@ a {
   top: 1rem;
   right: 2rem;
   font-size: 15px;
+  color: black;
   -webkit-text-stroke: .5px black;
 }
 

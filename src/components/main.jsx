@@ -44,7 +44,7 @@ class Main extends Component {
    }
  return(
    <div id="sign-out">
-     <Link to='/' onClick={this.signOut}> Sign Out </Link>
+     <Link to='/home' onClick={this.signOut}> Sign Out </Link>
      </div>
    )
  }
