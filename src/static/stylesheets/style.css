@@ -98,5 +98,13 @@ input {
   height: 2rem;
   width: 9rem;
   box-sizing: padding-box;
+}
+
+.reviews {
+  color: white;
+  height: 20rem;
+  width: 30rem;
+  box-sizing: padding-box;
   border-radius: 20%;
+  text-align: center;
 }

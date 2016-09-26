@@ -6,7 +6,8 @@ import Login from '../components/login.jsx';
 import Register from '../components/register.jsx';
 import Dashboard from '../components/dashboard.jsx';
 import Review from '../components/review.jsx';
-import Like from '../components/like.jsx';
+import ReviewList from '../components/reviewList.jsx';
+// import Like from '../components/like.jsx';
 import requireAuth from '../utils/auth.js';
 
 const Routes = () => {
@@ -18,7 +19,8 @@ const Routes = () => {
         <Route path="register" component={Register} />
         <Route path="dashboard" component={Dashboard} onEnter={requireAuth} />
         <Route path="review" component={Review} />
-        <Route path="like" compenent={Like} />
+        {/* <Route path="signout" component={Dashboard} /> */}
+        {/* <Route path="like" compenent={Like} /> */}
       </Route>
     </Router>
   );
