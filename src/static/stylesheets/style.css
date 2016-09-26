@@ -64,7 +64,6 @@ a {
 }
 
 #LeaveReview {
-  
   -webkit-text-stroke: .5px black;
 }
 
@@ -86,6 +85,11 @@ input {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-radius: 10%;
+}
+
+.publishReviewButton {
+  background-color: rgb(179, 14, 14);
+  color: white;
 }
 
 .btn {

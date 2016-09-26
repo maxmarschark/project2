@@ -110,7 +110,7 @@ class Review extends React.Component {
           <input
             type="submit"
             value="Publish Review"
-            className="hidden"
+            className="publishReviewButton"
             onClick={this.publishReview}
           />
         </div>
@@ -123,3 +123,8 @@ class Review extends React.Component {
 Review.propTypes = propTypes;
 
 export default Review;
+
+
+//get posts to render on page//
+//create an EDIT button and way to edit review once it has been posted//
+//create a read component, same as 'review' component//
