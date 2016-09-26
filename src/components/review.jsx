@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import request from 'superagent';
 import like from './like.jsx';
 import firebase from '../../firebase.config.js';
@@ -74,11 +75,33 @@ class Review extends React.Component {
     request.post(url).send({ user: userId, restName: this.state.localRestName, review: this.state.localReview }).catch((err) => {
       console.log(err);
     });
+    this.props.router.push('/reviewlist')
   }
   isSaved() {
     return this.props.author === this.state.localRestName &&
           this.props.content === this.state.localReview;
   }
+
+  getReviews() {
+    let reviewsDatabase = firebase.database().ref().child('reviews');
+    reviewsDatabase.on("value", (snapshot) => {
+      console.log(snapshot.val())
+      this.cleanData(snapshot.val())
+      })
+  }
+  cleanData(object) {
+    let cleanReviews = Object.keys(object).map( (key) => {
+      let individualReview = `${key}: ${object[key]}`;
+      return individualReview;
+    })
+    console.log(cleanReviews);
+    return cleanReviews
+  }
+
+  componentDidMount() {
+    this.getReviews();
+  }
+
   render() {
     let activeButtons;
     if (this.isSaved()) {
@@ -115,6 +138,7 @@ class Review extends React.Component {
           />
         </div>
         {activeButtons}
+        <div>{this.getReviews()}</div>
       </div>
     );
   }
@@ -122,7 +146,7 @@ class Review extends React.Component {
 
 Review.propTypes = propTypes;
 
-export default Review;
+export default withRouter(Review);
 
 
 //get posts to render on page//

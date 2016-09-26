@@ -2,7 +2,7 @@ import React from 'react';
 import Like from '../components/like.jsx';
 import {Link} from 'react-router';
 import Review from '../components/review.jsx';
-import ReviewList from '../components/reviewList.jsx';
+import ReviewList from './reviewList.jsx';
 
 
 const Dashboard = () => {
