@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import firebase from '../../firebase.config.js';
 import { withRouter } from 'react-router';
+import firebase from '../../firebase.config.js';
 
 class Register extends Component {
   constructor() {
@@ -20,40 +20,40 @@ class Register extends Component {
     this.setState(stateObj);
   }
 
-  handleSubmit() {
-    const { username, password } = this.state;
-    firebase.auth()
-      .createUserWithEmailAndPassword(username, password)
-      .catch((err) => {
-        console.log(err);
-      })
-      .then((user) => {
-        firebase.database().ref('users')
-          .child(user.uid)
-          .set({first_name: '', last_name: '', email: username})
-          console.log(firebase.auth().currentUser);
-      })
-      .then(() => {
-        this.props.router.push('/dashboard');
-      });
-  }
+handleSubmit() {
+  const { username, password } = this.state;
+  firebase.auth()
+    .createUserWithEmailAndPassword(username, password)
+    .catch((err) => {
+      console.log(err);
+    })
+    .then((user) => {
+      firebase.database().ref('users')
+        .child(user.uid)
+        .set({ first_name: '', last_name: '', email: username })
+        console.log(firebase.auth().currentUser);
+    })
+    .then(() => {
+      this.props.router.push('/dashboard');
+    });
+}
 
-  render() {
-    return (
-      <div>
-        <h1 id="registerStyle">Register</h1>
-        <div id="register-form">
-          <div>
-            <input name="username" onChange={this.handleChange} type="text" placeholder="username" />
-          </div>
-          <div>
-            <input name="password" onChange={this.handleChange} type="password" placeholder="password" />
-          </div>
-          <button className="btn" onClick={this.handleSubmit}>Register</button>
+render() {
+  return (
+    <div>
+      <h1 id="registerStyle">Register</h1>
+      <div id="register-form">
+        <div>
+          <input name="username" onChange={this.handleChange} type="text" placeholder="username" />
         </div>
+        <div>
+          <input name="password" onChange={this.handleChange} type="password" placeholder="password" />
+        </div>
+        <button className="btn" onClick={this.handleSubmit}>Register</button>
       </div>
-    );
-  }
+    </div>
+  );
+}
 }
 
 export default withRouter(Register);
