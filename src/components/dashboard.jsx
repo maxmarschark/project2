@@ -8,18 +8,9 @@ const Dashboard = () => {
 
   return (
     <div>
+        <Link to="/login" id="Home">Home</Link>
         <Link to="/review" id="LeaveReview">Leave A Review</Link>
-        <div>
-          {/* <Review
-            handlePublish={this.handlePublish}
-            handleDelete={this.httpDeleteReview}
-          />
-          <ReviewList
-            handlePublish={this.handlePublish}
-            handleDelete={this.httpDeleteReview}
-            review={this.state.review}
-          /> */}
-        </div>
+        <Link to="/reviewlist" id="ViewReview">View Past Reviews</Link>
     </div>
   );
 }

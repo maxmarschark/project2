@@ -2,7 +2,11 @@
 
 ##Project MVP
 
-  restaurant Reviewer(blog)
+  Restaurant Reviewer
+
+  In this App you are able to:
+    -Login/Register for the website
+    -Leave a review of a restaurant for others to see.
 
 ##Technologies
 
@@ -11,21 +15,11 @@
  - Javascript
  - React.JS
  - Firebase
- - ~possibly API???~
+
 
 
 ##Next Steps
 
- - Figure out signup/login
  - Add restaurant info
- - Add post(review) bar
- - Add buttons(add restaurant, review, delete)
-
-
-
-##Bonuses
-
- - Search by cuisine
- - Add pictures of restaurant/food
- - Figure out Facebook || Gmail || twitter login
- - googleMaps??
+ - Add Update and delete abilities to App.
+ - Add API

@@ -63,7 +63,21 @@ a {
   -webkit-text-stroke: .5px black;
 }
 
+#Home {
+  float: left;
+  margin-left: 5rem;
+  -webkit-text-stroke: .5px black;
+}
+
 #LeaveReview {
+  position: relative;
+  padding-left: 22rem;
+  -webkit-text-stroke: .5px black;
+}
+
+#ViewReview {
+  position: relative;
+  padding-left: 18rem;
   -webkit-text-stroke: .5px black;
 }
 
