@@ -74,16 +74,6 @@ class Review extends React.Component {
     this.props.router.push('/reviewlist')
   }
 
-// editReview() {
-//  console.log('review can be updated');
-//  const userId = firebase.auth().currentUser.uid;
-//  const url = 'https://restaurantreview-ae4cc.firebaseio.com/reviews.json';
-//  request.patch(url).send({ user: userId, restName: this.state.localRestName, review:   this.state.localReview }).catch((err) => {
-//  console.log(err);
-//  });
-//  this.props.router.push('/reviewlist')
-// }
-
   isSaved() {
     return this.props.author === this.state.localRestName &&
           this.props.content === this.state.localReview;
